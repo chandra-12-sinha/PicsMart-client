@@ -1,0 +1,42 @@
+.Navbar {
+	height: 60px;
+	width: 100%;
+	background-color: #fff;
+	border-bottom: 1px solid var(--border-color);
+	position: sticky;
+	top: 0;
+
+	.container {
+
+		h2 {
+			font-family: dancing;
+			font-size: 3em;
+		}
+	
+		height: 100%;
+		// max-width: 960px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		// margin-inline: auto;
+	
+		.right-side {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 25px;
+	
+			.logout {
+				font-size: 1.6rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+	
+				.logout-text {
+					color: var(--accent-color);
+				}
+			}
+		}
+	}
+}

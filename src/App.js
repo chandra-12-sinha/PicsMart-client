@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef } from "react";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/SignUp/Signup";
+import RequireUser from "./Components/RequireUser";
+import Feed from "./Components/feed/Feed";
+import Profile from "./Components/profile/Profile";
+import UpdateProfile from "./Components/updateProfile/UpdateProfile";
+import LoadingBar from "react-top-loading-bar";
+import { useSelector } from "react-redux";
+import Isloggedin from "./Components/Isloggedin";
 
 function App() {
+  
+  const isloading = useSelector((state) => state.appConfigReducer.isLoading);
+  const loadingref = useRef(null);
+
+  useEffect(() => {
+    if (isloading) {
+      loadingref.current?.continuousStart();
+    } else {
+      loadingref.current?.complete();
+    }
+  }, [isloading]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <LoadingBar height={4} color={"var(--accent-color)"} ref={loadingref} />
+      <Routes>
+        <Route element={<RequireUser />}>
+          <Route element={<Home />}>
+            <Route path="/" element={<Feed />} />
+            <Route path="/profile/:id" element={<Profile />} />
+            <Route path="/updateProfile" element={<UpdateProfile />} />
+          </Route>
+        </Route>
+
+        <Route element={<Isloggedin />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

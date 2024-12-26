@@ -1,4 +1,25 @@
-body {
+
+@font-face {
+  font-family: dancing;
+  src: url(./Assets/fonts/DancingScript-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: gilroy;
+  src: url(./Assets/fonts/Gilroy.ttf);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+html, body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +31,70 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --light-color: #979797;
+  --border-color: #dadada;
+  --accent-color: #192A56;
+  --accent-color2: #334781;
+  --secondary-color: #088eac;
+  --secondary-color2: #28b4d3;
+  --button-color: #2475B0;
+}
+
+.container {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #0A3D62;
+  user-select: none;
+}
+
+h3, h6 {
+  font-weight: 400;
+}
+
+p {
+  color: #1d5c8a;
+  font-size: 0.9rem;
+}
+
+.hover-link {
+  cursor: pointer;
+}
+
+.hover-link:active {
+  color: var(--secondary-color);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color2);
+}
+
+.btn-primary:active {
+  background-color: var(--accent-color);
+}
+
+.btn-secondary {
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.btn-secondary:hover {
+  border: 2px solid var(--accent-color2);
+  color: var(--accent-color2);
+}
+
+.btn-secondary:active {
+  color: var(--secondary-color);
 }

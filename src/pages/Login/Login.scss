@@ -1,0 +1,52 @@
+.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .heading {
+        text-align: center;
+    }
+
+    .login-box {
+        min-width: 200px;
+        padding: 40px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: lightblue;
+
+        label, input {
+            margin-block: 10px;
+            display: block;
+            width: 100%;
+            border-radius: 15px;
+        }
+    
+        label {
+            font-weight: bold;
+        }
+    
+        input {
+            padding: 6px 6px;
+            border: 1px solid rgba(0, 0, 0, 0.503);
+        }
+    
+        .submit {
+            background-color: #9e5a23;
+            font-weight: bold;
+            color: white;
+            border: none;
+            margin-top: 8px;
+        }
+    
+        .submit:hover {
+            background-color: #352a07;
+            cursor: pointer;
+        }
+
+        .subheading {
+            color: #010a05;
+            text-align: center;
+        }
+    }
+}
